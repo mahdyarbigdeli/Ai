@@ -12,8 +12,8 @@ services:
     environment:
       - PORT=3000
       - NODE_ENV=production
-      - FLOWISE_USERNAME=admintmig
-      - FLOWISE_PASSWORD=Rolex1357rolexPRO@
+      - FLOWISE_USERNAME=
+      - FLOWISE_PASSWORD=
     networks:
       - ai_network
 
@@ -22,9 +22,9 @@ services:
     container_name: postgres_n8n
     restart: unless-stopped
     environment:
-      POSTGRES_USER: n8n
-      POSTGRES_PASSWORD: n8npassword
-      POSTGRES_DB: n8n
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      POSTGRES_DB:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
@@ -38,32 +38,32 @@ services:
       - "5678:5678"
     environment:
       - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=admin
-      - N8N_BASIC_AUTH_PASSWORD=securepassword
+      - N8N_BASIC_AUTH_USER=
+      - N8N_BASIC_AUTH_PASSWORD=
 
       # Database settings
       - N8N_SECURE_COOKIE=false
       - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_HOST=
       - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_DATABASE=n8n
-      - DB_POSTGRESDB_USER=n8n
-      - DB_POSTGRESDB_PASSWORD=n8npassword
+      - DB_POSTGRESDB_DATABASE=
+      - DB_POSTGRESDB_USER=
+      - DB_POSTGRESDB_PASSWORD=
 
       # Fix WebSocket Issues
-      - N8N_HOST=work.tmig.info
+      - N8N_HOST=
       - N8N_PROTOCOL=https
       - N8N_PORT=5678
-      - WEBHOOK_URL=https://work.tmig.info/
+      - WEBHOOK_URL=
       - N8N_PUSH_BACKEND=websocket
 
       # SMTP Email Configuration
       - N8N_EMAIL_MODE=smtp
       - N8N_SMTP_HOST=smtp.gmail.com
       - N8N_SMTP_PORT=587
-      - N8N_SMTP_USER=aldycompanytechnology@gmail.com
-      - N8N_SMTP_PASS=myioqzuctmpuyjds
-      - N8N_SMTP_SENDER=aldycompanytechnology@gmail.com
+      - N8N_SMTP_USER=
+      - N8N_SMTP_PASS=
+      - N8N_SMTP_SENDER=
       - N8N_SMTP_SSL=false
 
       # Recommended settings
@@ -84,8 +84,8 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - OLLAMA_API_BASE_URL=https://ollama.tmig.info
-      - OPENAI_API_KEY=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
+      - OLLAMA_API_BASE_URL=
+      - OPENAI_API_KEY=
     volumes:
       - openwebui_data:/app/backend/data
     networks:
